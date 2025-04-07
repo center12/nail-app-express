@@ -2,6 +2,10 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 const connectDB = require('./config/db');
+const passport = require('./config/passport');
+const authRoutes = require('./routes/auth');
+const intakeFormRoutes = require('./routes/intakeForm');
+const subscriptionRoutes = require('./routes/subscription');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -13,8 +17,13 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(passport.initialize());
 
 // Routes
+app.use('/api/auth', authRoutes);
+app.use('/api/intake-forms', intakeFormRoutes);
+app.use('/api/subscriptions', subscriptionRoutes);
+
 app.get('/', (req, res) => {
   res.json({ message: 'Welcome to the Nail App API' });
 });
