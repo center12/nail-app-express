@@ -12,6 +12,8 @@ npm install
 2. Create a `.env` file in the root directory and add your environment variables:
 ```
 PORT=3000
+MONGODB_URI=your_mongodb_connection_string
+NODE_ENV=development
 ```
 
 ## Development
@@ -41,6 +43,10 @@ npm i -g vercel
 ```bash
 vercel
 ```
+
+3. Add your environment variables in the Vercel dashboard:
+   - MONGODB_URI
+   - NODE_ENV
 
 ## API Endpoints
 
