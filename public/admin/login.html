@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    
+    <!-- Ant Design CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.24.8/antd.min.css">
+    
+    <!-- React and ReactDOM -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    
+    <!-- Ant Design -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/antd/4.24.8/antd.min.js"></script>
+    
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { Form, Input, Button, Layout, Card, message } = antd;
+        const { Content } = Layout;
+
+        function Login() {
+            const onFinish = async (values) => {
+                try {
+                    const response = await fetch('/api/auth/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(values)
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        if (data.token) {
+                            localStorage.setItem('token', data.token);
+                            window.location.href = '/admin';
+                        } else {
+                            message.error('Invalid server response');
+                        }
+                    } else {
+                        message.error('Invalid credentials');
+                    }
+                } catch (error) {
+                    console.error('Login error:', error);
+                    message.error('Login failed');
+                }
+            };
+
+            return (
+                <Layout style={{ minHeight: '100vh' }}>
+                    <Content style={{ 
+                        display: 'flex', 
+                        justifyContent: 'center', 
+                        alignItems: 'center' 
+                    }}>
+                        <Card title="Admin Login" style={{ width: 300 }}>
+                            <Form
+                                name="login"
+                                onFinish={onFinish}
+                                autoComplete="off"
+                            >
+                                <Form.Item
+                                    name="email"
+                                    rules={[{ required: true, message: 'Please input your email!' }]}
+                                >
+                                    <Input placeholder="email" />
+                                </Form.Item>
+
+                                <Form.Item
+                                    name="password"
+                                    rules={[{ required: true, message: 'Please input your password!' }]}
+                                >
+                                    <Input.Password placeholder="Password" />
+                                </Form.Item>
+
+                                <Form.Item>
+                                    <Button type="primary" htmlType="submit" style={{ width: '100%' }}>
+                                        Log in
+                                    </Button>
+                                </Form.Item>
+                            </Form>
+                        </Card>
+                    </Content>
+                </Layout>
+            );
+        }
+
+        ReactDOM.render(<Login />, document.getElementById('root'));
+    </script>
+</body>
+</html> 

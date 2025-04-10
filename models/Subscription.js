@@ -3,22 +3,22 @@ const mongoose = require('mongoose');
 const subscriptionSchema = new mongoose.Schema({
   phone: {
     type: String,
-    required: true,
+    required: false,
     trim: true
   },
   postcode: {
     type: String,
-    required: true,
+    required: false,
     trim: true
   },
   name: {
     type: String,
-    required: true,
+    required: false,
     trim: true
   },
   dob: {
     type: String,
-    required: true,
+    required: false,
     trim: true
   },
   email: {
@@ -30,7 +30,7 @@ const subscriptionSchema = new mongoose.Schema({
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
-    required: true
+    required: false
   },
   status: {
     type: String,

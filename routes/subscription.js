@@ -4,11 +4,10 @@ const Subscription = require('../models/Subscription');
 const { authenticate, authorize } = require('../middleware/auth');
 
 // Create a new subscription
-router.post('/', authenticate, async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const subscription = new Subscription({
       ...req.body,
-      createdBy: req.user.id
     });
     
     await subscription.save();
