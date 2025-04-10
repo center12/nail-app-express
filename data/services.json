@@ -1,0 +1,852 @@
+{
+  "data": [
+    {
+      "id": 2,
+      "documentId": "s8of6opga6t5wvnxphy7c5j3",
+      "name": "Classic Manicure",
+      "price": "28",
+      "description": "Classic manicure featuring a cuticle soak, trim, shaping, cuticle treatment, light massage, and polish.",
+      "order": 0,
+      "createdAt": "2025-03-26T15:46:22.179Z",
+      "updatedAt": "2025-03-26T15:46:26.734Z",
+      "publishedAt": "2025-03-26T15:46:27.295Z",
+      "category": {
+        "id": 2,
+        "documentId": "ptuz68k912ve55h32x04ozxw",
+        "name": "MANICURE",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:42:44.973Z",
+        "updatedAt": "2025-03-26T15:42:48.577Z",
+        "publishedAt": "2025-03-26T15:42:49.077Z"
+      }
+    },
+    {
+      "id": 4,
+      "documentId": "s3phop45082rqtwuk08zxmyf",
+      "name": "Luxury Manicure",
+      "price": "38",
+      "description": "Extend your express manicure experience by incorporating a sugar scrub exfoliation, collagen mask, or paraffin treatment. Enjoy the soothing benefits of Cannabinol oil and lotion to relax, alleviate pain, and reduce inflammation. Elevate the indulgence with an additional massage, warm towels, and the perfect polish finish.",
+      "order": 0,
+      "createdAt": "2025-03-26T15:46:48.727Z",
+      "updatedAt": "2025-03-26T15:46:57.352Z",
+      "publishedAt": "2025-03-26T15:46:57.770Z",
+      "category": {
+        "id": 2,
+        "documentId": "ptuz68k912ve55h32x04ozxw",
+        "name": "MANICURE",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:42:44.973Z",
+        "updatedAt": "2025-03-26T15:42:48.577Z",
+        "publishedAt": "2025-03-26T15:42:49.077Z"
+      }
+    },
+    {
+      "id": 6,
+      "documentId": "xa7f92ps6203uk2ttc6yzfbf",
+      "name": "Express Pedicure",
+      "price": "38",
+      "description": "Indulge in our essential pedicure, featuring a soothing foot soak, precise nail shaping, cuticle care, invigorating exfoliating scrub, hydrating massage, hot towel treatment and your preferred polish choice or buffing shine.",
+      "order": 0,
+      "createdAt": "2025-03-26T15:47:23.468Z",
+      "updatedAt": "2025-03-26T15:47:28.108Z",
+      "publishedAt": "2025-03-26T15:47:28.542Z",
+      "category": {
+        "id": 4,
+        "documentId": "j6rfpimqnrck400f4it83lp0",
+        "name": "PEDICURE",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:43:00.567Z",
+        "updatedAt": "2025-03-26T15:43:04.674Z",
+        "publishedAt": "2025-03-26T15:43:05.200Z"
+      }
+    },
+    {
+      "id": 8,
+      "documentId": "aeba67ujcwj2pkkb4bxyplgi",
+      "name": "Pamper Me Pedicure",
+      "price": "42",
+      "description": "Indulge in a timeless favorite with our Green Tea Spa Pedicure, featuring a relaxing foot soak, callus removal, nail shaping, and cuticle care. Enjoy gentle exfoliation with a green tea sugar scrub, leaving your skin soft and revitalized. Experience a refreshing green tea mask to hydrate and nourish your skin, followed by collagen-infused socks for deep moisturization. Conclude with a soothing massage using our specially formulated green tea lotion and a final hot towel treatment",
+      "order": 0,
+      "createdAt": "2025-03-26T15:47:51.175Z",
+      "updatedAt": "2025-03-26T15:47:55.538Z",
+      "publishedAt": "2025-03-26T15:47:55.934Z",
+      "category": {
+        "id": 4,
+        "documentId": "j6rfpimqnrck400f4it83lp0",
+        "name": "PEDICURE",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:43:00.567Z",
+        "updatedAt": "2025-03-26T15:43:04.674Z",
+        "publishedAt": "2025-03-26T15:43:05.200Z"
+      }
+    },
+    {
+      "id": 10,
+      "documentId": "h9c9ako4m7ibte4ni5ian34y",
+      "name": "Aromatherapy Rose Pedicure",
+      "price": "65",
+      "description": "Embark on a luxurious spa journey with a rose petal and champagne foot soak, expert nail care, and a rose-infused sugar scrub for radiant skin. Indulge in a hydrating yogurt and rose mask, followed by collagen socks for intense hydration. Enjoy a relaxing massage with rose-scented lotion and hot stones to melt away tension. Complete your experience with a final hot towel treatment.",
+      "order": 0,
+      "createdAt": "2025-03-26T15:48:17.857Z",
+      "updatedAt": "2025-03-26T15:48:22.699Z",
+      "publishedAt": "2025-03-26T15:48:23.177Z",
+      "category": {
+        "id": 4,
+        "documentId": "j6rfpimqnrck400f4it83lp0",
+        "name": "PEDICURE",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:43:00.567Z",
+        "updatedAt": "2025-03-26T15:43:04.674Z",
+        "publishedAt": "2025-03-26T15:43:05.200Z"
+      }
+    },
+    {
+      "id": 12,
+      "documentId": "njq8kcx30f7pne9rxbanwq54",
+      "name": "Special Oil Ream Serenity",
+      "price": "86",
+      "description": "Experience pure relaxation with our Special Oil Serenity Pedicure. Unwind as Special Oil bath bombs relax muscles, followed by a gentle exfoliation with Special Oil sugar scrub. Our cooling Special Oil mask hydrates and refreshes your skin. Deep hydration is then delivered through collagen-infused socks. Enjoy a soothing massage with Special Oil-infused oil and lotion, complemented by reflexology tools and the warmth of hot stones. Complete your journey with a final touch a hot towel treatment. Pure bliss in every step!",
+      "order": 0,
+      "createdAt": "2025-03-26T15:48:49.245Z",
+      "updatedAt": "2025-03-26T15:48:55.819Z",
+      "publishedAt": "2025-03-26T15:48:56.329Z",
+      "category": {
+        "id": 4,
+        "documentId": "j6rfpimqnrck400f4it83lp0",
+        "name": "PEDICURE",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:43:00.567Z",
+        "updatedAt": "2025-03-26T15:43:04.674Z",
+        "publishedAt": "2025-03-26T15:43:05.200Z"
+      }
+    },
+    {
+      "id": 14,
+      "documentId": "wiyklydffshoui7u7ethk8hw",
+      "name": "Milk And Honey",
+      "price": "54",
+      "description": "Immerse yourself in a soothing warm milk bath for relaxation and skin softening. Enjoy callus removal, nail shaping, and cuticle care, followed by a gentle honey sugar scrub for exfoliation. Nourish your skin with a milk and honey cream mask, then experience a tension- relieving massage with hot stones and a final hot towel treatment.",
+      "order": 0,
+      "createdAt": "2025-03-26T15:49:17.588Z",
+      "updatedAt": "2025-03-26T15:49:22.636Z",
+      "publishedAt": "2025-03-26T15:49:23.065Z",
+      "category": {
+        "id": 6,
+        "documentId": "ldo3fkjd9whm3kr1ozsupp3t",
+        "name": "OPULENT PEDICURES",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:43:58.900Z",
+        "updatedAt": "2025-03-26T15:44:02.953Z",
+        "publishedAt": "2025-03-26T15:44:03.449Z"
+      }
+    },
+    {
+      "id": 16,
+      "documentId": "vtrz24ng5wysqdwa2hw66o1s",
+      "name": "Coffee-Me Up",
+      "price": "54",
+      "description": "Revitalize your feet with a coffee foot soak, including callus removal, nail shaping, and cuticle care. Enjoy an espresso sugar scrub for smooth skin and a hydrating butter mask with the richness of coffee. Collagen-infused socks provide deep hydration. Conclude with a relaxing massage using coffee cream lotion and hot stones, followed by a final hot towel treatment.",
+      "order": 0,
+      "createdAt": "2025-03-26T15:49:47.503Z",
+      "updatedAt": "2025-03-26T15:49:53.400Z",
+      "publishedAt": "2025-03-26T15:49:53.819Z",
+      "category": {
+        "id": 6,
+        "documentId": "ldo3fkjd9whm3kr1ozsupp3t",
+        "name": "OPULENT PEDICURES",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:43:58.900Z",
+        "updatedAt": "2025-03-26T15:44:02.953Z",
+        "publishedAt": "2025-03-26T15:44:03.449Z"
+      }
+    },
+    {
+      "id": 18,
+      "documentId": "aql23fjxmvq1mqt5pwy7nb3k",
+      "name": "Classic Manicure",
+      "price": "28",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:50:12.116Z",
+      "updatedAt": "2025-03-26T15:50:16.743Z",
+      "publishedAt": "2025-03-26T15:50:17.222Z",
+      "category": {
+        "id": 8,
+        "documentId": "puebstbsdct304f70g62gpwc",
+        "name": "NAIL ENHANCEMENT",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:44:13.866Z",
+        "updatedAt": "2025-03-26T15:44:16.659Z",
+        "publishedAt": "2025-03-26T15:44:17.161Z"
+      }
+    },
+    {
+      "id": 20,
+      "documentId": "v2oh7imdmsermty9ns15ug1l",
+      "name": "Luxury Manicure",
+      "price": "38",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:50:32.650Z",
+      "updatedAt": "2025-03-26T15:50:37.312Z",
+      "publishedAt": "2025-03-26T15:50:37.760Z",
+      "category": {
+        "id": 8,
+        "documentId": "puebstbsdct304f70g62gpwc",
+        "name": "NAIL ENHANCEMENT",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:44:13.866Z",
+        "updatedAt": "2025-03-26T15:44:16.659Z",
+        "publishedAt": "2025-03-26T15:44:17.161Z"
+      }
+    },
+    {
+      "id": 22,
+      "documentId": "bkus4vjnq1whwb2yn0g1ob83",
+      "name": "Gel Additional",
+      "price": "5",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:50:53.469Z",
+      "updatedAt": "2025-03-26T15:50:57.988Z",
+      "publishedAt": "2025-03-26T15:50:58.534Z",
+      "category": {
+        "id": 8,
+        "documentId": "puebstbsdct304f70g62gpwc",
+        "name": "NAIL ENHANCEMENT",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:44:13.866Z",
+        "updatedAt": "2025-03-26T15:44:16.659Z",
+        "publishedAt": "2025-03-26T15:44:17.161Z"
+      }
+    },
+    {
+      "id": 32,
+      "documentId": "c4vl9yq33zvbg76i0jfr53r2",
+      "name": "Acrylic/Overlay",
+      "price": "38",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:52:45.286Z",
+      "updatedAt": "2025-03-26T15:52:50.228Z",
+      "publishedAt": "2025-03-26T15:52:50.704Z",
+      "category": {
+        "id": 12,
+        "documentId": "t2fzblq678j0miizgmqhhdo8",
+        "name": "INFILL",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:03.974Z",
+        "updatedAt": "2025-03-26T15:45:08.079Z",
+        "publishedAt": "2025-03-26T15:45:08.631Z"
+      }
+    },
+    {
+      "id": 24,
+      "documentId": "yw5hc0djegeuwh6hai9p1gwf",
+      "name": "Acrylic/Overlay",
+      "price": "47",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:51:18.804Z",
+      "updatedAt": "2025-03-26T15:51:23.193Z",
+      "publishedAt": "2025-03-26T15:51:23.721Z",
+      "category": {
+        "id": 10,
+        "documentId": "yhdscztkb5hh2duro5lcz0f9",
+        "name": "FULL SET",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:44:27.081Z",
+        "updatedAt": "2025-03-26T15:44:31.654Z",
+        "publishedAt": "2025-03-26T15:44:32.138Z"
+      }
+    },
+    {
+      "id": 26,
+      "documentId": "wapqo0yltvp14vb5gity96jp",
+      "name": "Biab Gel",
+      "price": "47",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:51:36.727Z",
+      "updatedAt": "2025-03-26T15:51:42.560Z",
+      "publishedAt": "2025-03-26T15:51:42.972Z",
+      "category": {
+        "id": 10,
+        "documentId": "yhdscztkb5hh2duro5lcz0f9",
+        "name": "FULL SET",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:44:27.081Z",
+        "updatedAt": "2025-03-26T15:44:31.654Z",
+        "publishedAt": "2025-03-26T15:44:32.138Z"
+      }
+    },
+    {
+      "id": 28,
+      "documentId": "gs6hqkd9qs94ao9hbcmxlsjz",
+      "name": "Ombre",
+      "price": "57",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:51:56.291Z",
+      "updatedAt": "2025-03-26T15:52:01.285Z",
+      "publishedAt": "2025-03-26T15:52:01.712Z",
+      "category": {
+        "id": 10,
+        "documentId": "yhdscztkb5hh2duro5lcz0f9",
+        "name": "FULL SET",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:44:27.081Z",
+        "updatedAt": "2025-03-26T15:44:31.654Z",
+        "publishedAt": "2025-03-26T15:44:32.138Z"
+      }
+    },
+    {
+      "id": 30,
+      "documentId": "rcpg0tvwf64zela8r2tu12mu",
+      "name": "Dipping Powder",
+      "price": "47",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:52:12.530Z",
+      "updatedAt": "2025-03-26T15:52:25.796Z",
+      "publishedAt": "2025-03-26T15:52:26.234Z",
+      "category": {
+        "id": 10,
+        "documentId": "yhdscztkb5hh2duro5lcz0f9",
+        "name": "FULL SET",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:44:27.081Z",
+        "updatedAt": "2025-03-26T15:44:31.654Z",
+        "publishedAt": "2025-03-26T15:44:32.138Z"
+      }
+    },
+    {
+      "id": 34,
+      "documentId": "ond2tiytp2jnnwc5l8rrnnz5",
+      "name": "Biab Gel",
+      "price": "38",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:53:06.175Z",
+      "updatedAt": "2025-03-26T15:53:11.330Z",
+      "publishedAt": "2025-03-26T15:53:11.751Z",
+      "category": {
+        "id": 12,
+        "documentId": "t2fzblq678j0miizgmqhhdo8",
+        "name": "INFILL",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:03.974Z",
+        "updatedAt": "2025-03-26T15:45:08.079Z",
+        "publishedAt": "2025-03-26T15:45:08.631Z"
+      }
+    },
+    {
+      "id": 36,
+      "documentId": "ts0sgfjgvqhh0jo1lqr39em4",
+      "name": "Dipping Powder",
+      "price": "38",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:53:30.660Z",
+      "updatedAt": "2025-03-26T15:53:35.625Z",
+      "publishedAt": "2025-03-26T15:53:36.047Z",
+      "category": {
+        "id": 12,
+        "documentId": "t2fzblq678j0miizgmqhhdo8",
+        "name": "INFILL",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:03.974Z",
+        "updatedAt": "2025-03-26T15:45:08.079Z",
+        "publishedAt": "2025-03-26T15:45:08.631Z"
+      }
+    },
+    {
+      "id": 38,
+      "documentId": "xp4e8g69cnzi7xxg3xd6r83i",
+      "name": "French/Deep French",
+      "price": "10+",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:53:58.704Z",
+      "updatedAt": "2025-03-26T15:54:03.019Z",
+      "publishedAt": "2025-03-26T15:54:03.549Z",
+      "category": {
+        "id": 14,
+        "documentId": "pceide1zjs37bo04xh3uhfuz",
+        "name": "ADD ON",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:17.180Z",
+        "updatedAt": "2025-03-26T15:45:21.715Z",
+        "publishedAt": "2025-03-26T15:45:22.217Z"
+      }
+    },
+    {
+      "id": 40,
+      "documentId": "mnm0awbchifz40updukb4i47",
+      "name": "Length",
+      "price": "5+",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:54:17.691Z",
+      "updatedAt": "2025-03-26T15:54:21.946Z",
+      "publishedAt": "2025-03-26T15:54:22.498Z",
+      "category": {
+        "id": 14,
+        "documentId": "pceide1zjs37bo04xh3uhfuz",
+        "name": "ADD ON",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:17.180Z",
+        "updatedAt": "2025-03-26T15:45:21.715Z",
+        "publishedAt": "2025-03-26T15:45:22.217Z"
+      }
+    },
+    {
+      "id": 42,
+      "documentId": "znudehmoki4q61ji1664al0i",
+      "name": "Trim-Reshape",
+      "price": "5+",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:54:36.537Z",
+      "updatedAt": "2025-03-26T15:54:41.489Z",
+      "publishedAt": "2025-03-26T15:54:41.899Z",
+      "category": {
+        "id": 14,
+        "documentId": "pceide1zjs37bo04xh3uhfuz",
+        "name": "ADD ON",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:17.180Z",
+        "updatedAt": "2025-03-26T15:45:21.715Z",
+        "publishedAt": "2025-03-26T15:45:22.217Z"
+      }
+    },
+    {
+      "id": 44,
+      "documentId": "td1dkaox68yjvshv0smnj9ov",
+      "name": "Nail Removal with Services",
+      "price": "5",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:54:57.030Z",
+      "updatedAt": "2025-03-26T15:55:02.738Z",
+      "publishedAt": "2025-03-26T15:55:03.150Z",
+      "category": {
+        "id": 16,
+        "documentId": "q9v7s7d4yo2nohzxeha0f5s7",
+        "name": "ADDITIONAL",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:34.397Z",
+        "updatedAt": "2025-03-26T15:45:37.629Z",
+        "publishedAt": "2025-03-26T15:45:38.079Z"
+      }
+    },
+    {
+      "id": 46,
+      "documentId": "m3fchwbpd0f9oionom2mgv3i",
+      "name": "Nail Removal without Service",
+      "price": "15+",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:55:19.913Z",
+      "updatedAt": "2025-03-26T15:55:24.125Z",
+      "publishedAt": "2025-03-26T15:55:24.650Z",
+      "category": {
+        "id": 16,
+        "documentId": "q9v7s7d4yo2nohzxeha0f5s7",
+        "name": "ADDITIONAL",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:34.397Z",
+        "updatedAt": "2025-03-26T15:45:37.629Z",
+        "publishedAt": "2025-03-26T15:45:38.079Z"
+      }
+    },
+    {
+      "id": 48,
+      "documentId": "v93z2zwq9esyymsod58izn8p",
+      "name": "Nail Repair Single Nail",
+      "price": "3+",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:55:41.585Z",
+      "updatedAt": "2025-03-26T15:55:45.998Z",
+      "publishedAt": "2025-03-26T15:55:46.504Z",
+      "category": {
+        "id": 16,
+        "documentId": "q9v7s7d4yo2nohzxeha0f5s7",
+        "name": "ADDITIONAL",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:34.397Z",
+        "updatedAt": "2025-03-26T15:45:37.629Z",
+        "publishedAt": "2025-03-26T15:45:38.079Z"
+      }
+    },
+    {
+      "id": 50,
+      "documentId": "zia6x9io9sfrk3se1l37bxrp",
+      "name": "Polish Change (Nails)",
+      "price": "25+",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:55:59.541Z",
+      "updatedAt": "2025-03-26T15:56:04.151Z",
+      "publishedAt": "2025-03-26T15:56:04.642Z",
+      "category": {
+        "id": 16,
+        "documentId": "q9v7s7d4yo2nohzxeha0f5s7",
+        "name": "ADDITIONAL",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:34.397Z",
+        "updatedAt": "2025-03-26T15:45:37.629Z",
+        "publishedAt": "2025-03-26T15:45:38.079Z"
+      }
+    },
+    {
+      "id": 52,
+      "documentId": "dnt1m7ls6hk3zrqfbngrgt5r",
+      "name": "Polish Change (Gel)",
+      "price": "30+",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:56:23.819Z",
+      "updatedAt": "2025-03-26T15:56:27.886Z",
+      "publishedAt": "2025-03-26T15:56:28.345Z",
+      "category": {
+        "id": 16,
+        "documentId": "q9v7s7d4yo2nohzxeha0f5s7",
+        "name": "ADDITIONAL",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:34.397Z",
+        "updatedAt": "2025-03-26T15:45:37.629Z",
+        "publishedAt": "2025-03-26T15:45:38.079Z"
+      }
+    },
+    {
+      "id": 54,
+      "documentId": "npyz2k5glssia0vu5m5mspkn",
+      "name": "Design",
+      "price": "5+",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:56:46.458Z",
+      "updatedAt": "2025-03-26T15:56:51.266Z",
+      "publishedAt": "2025-03-26T15:56:51.771Z",
+      "category": {
+        "id": 16,
+        "documentId": "q9v7s7d4yo2nohzxeha0f5s7",
+        "name": "ADDITIONAL",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:34.397Z",
+        "updatedAt": "2025-03-26T15:45:37.629Z",
+        "publishedAt": "2025-03-26T15:45:38.079Z"
+      }
+    },
+    {
+      "id": 56,
+      "documentId": "rz48nlak16l6y0fei70ozg9n",
+      "name": "Eye Brow",
+      "price": "0",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:57:10.732Z",
+      "updatedAt": "2025-03-26T15:57:16.154Z",
+      "publishedAt": "2025-03-26T15:57:16.789Z",
+      "category": {
+        "id": 18,
+        "documentId": "azbs50b7x8ipns9vy94mnchf",
+        "name": "WAXING",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:46.457Z",
+        "updatedAt": "2025-03-26T15:45:50.036Z",
+        "publishedAt": "2025-03-26T15:45:50.524Z"
+      }
+    },
+    {
+      "id": 58,
+      "documentId": "rszuvkc15gynfa8afhffao6a",
+      "name": "Lip",
+      "price": "0",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:57:30.060Z",
+      "updatedAt": "2025-03-26T15:57:34.184Z",
+      "publishedAt": "2025-03-26T15:57:34.690Z",
+      "category": {
+        "id": 18,
+        "documentId": "azbs50b7x8ipns9vy94mnchf",
+        "name": "WAXING",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:46.457Z",
+        "updatedAt": "2025-03-26T15:45:50.036Z",
+        "publishedAt": "2025-03-26T15:45:50.524Z"
+      }
+    },
+    {
+      "id": 60,
+      "documentId": "pykne7kszbetxguuc08ykpd2",
+      "name": "Chin",
+      "price": "0",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:57:43.671Z",
+      "updatedAt": "2025-03-26T15:57:43.671Z",
+      "publishedAt": "2025-03-26T15:57:44.088Z",
+      "category": {
+        "id": 18,
+        "documentId": "azbs50b7x8ipns9vy94mnchf",
+        "name": "WAXING",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:46.457Z",
+        "updatedAt": "2025-03-26T15:45:50.036Z",
+        "publishedAt": "2025-03-26T15:45:50.524Z"
+      }
+    },
+    {
+      "id": 62,
+      "documentId": "o8n6ns9livhzyfe81vggfizs",
+      "name": "Cheeks",
+      "price": "0",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:58:10.022Z",
+      "updatedAt": "2025-03-26T15:58:10.022Z",
+      "publishedAt": "2025-03-26T15:58:10.538Z",
+      "category": {
+        "id": 18,
+        "documentId": "azbs50b7x8ipns9vy94mnchf",
+        "name": "WAXING",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:46.457Z",
+        "updatedAt": "2025-03-26T15:45:50.036Z",
+        "publishedAt": "2025-03-26T15:45:50.524Z"
+      }
+    },
+    {
+      "id": 64,
+      "documentId": "hw3yqh8uix87aukbyzsr8ph0",
+      "name": "Full Face",
+      "price": "0",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:58:22.819Z",
+      "updatedAt": "2025-03-26T15:58:22.819Z",
+      "publishedAt": "2025-03-26T15:58:23.238Z",
+      "category": {
+        "id": 18,
+        "documentId": "azbs50b7x8ipns9vy94mnchf",
+        "name": "WAXING",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:46.457Z",
+        "updatedAt": "2025-03-26T15:45:50.036Z",
+        "publishedAt": "2025-03-26T15:45:50.524Z"
+      }
+    },
+    {
+      "id": 66,
+      "documentId": "u4uhicpl7vyjk7q8mmrnl7bw",
+      "name": "Sideburns",
+      "price": "0",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:58:33.726Z",
+      "updatedAt": "2025-03-26T15:58:33.726Z",
+      "publishedAt": "2025-03-26T15:58:34.136Z",
+      "category": {
+        "id": 18,
+        "documentId": "azbs50b7x8ipns9vy94mnchf",
+        "name": "WAXING",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:46.457Z",
+        "updatedAt": "2025-03-26T15:45:50.036Z",
+        "publishedAt": "2025-03-26T15:45:50.524Z"
+      }
+    },
+    {
+      "id": 68,
+      "documentId": "o9gq2hyhguznwxj7bm592z4p",
+      "name": "Legs",
+      "price": "0",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:58:47.515Z",
+      "updatedAt": "2025-03-26T15:58:47.515Z",
+      "publishedAt": "2025-03-26T15:58:47.935Z",
+      "category": {
+        "id": 18,
+        "documentId": "azbs50b7x8ipns9vy94mnchf",
+        "name": "WAXING",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:46.457Z",
+        "updatedAt": "2025-03-26T15:45:50.036Z",
+        "publishedAt": "2025-03-26T15:45:50.524Z"
+      }
+    },
+    {
+      "id": 70,
+      "documentId": "f5ur9anh3c3yqqndr3ta79h1",
+      "name": "Lower Legs",
+      "price": "0",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:58:57.212Z",
+      "updatedAt": "2025-03-26T15:58:57.212Z",
+      "publishedAt": "2025-03-26T15:58:57.703Z",
+      "category": {
+        "id": 18,
+        "documentId": "azbs50b7x8ipns9vy94mnchf",
+        "name": "WAXING",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:46.457Z",
+        "updatedAt": "2025-03-26T15:45:50.036Z",
+        "publishedAt": "2025-03-26T15:45:50.524Z"
+      }
+    },
+    {
+      "id": 72,
+      "documentId": "vcn7tvh0qsjgrfm64nk070dl",
+      "name": "Full Legs",
+      "price": "0",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:59:06.902Z",
+      "updatedAt": "2025-03-26T15:59:06.902Z",
+      "publishedAt": "2025-03-26T15:59:07.413Z",
+      "category": {
+        "id": 18,
+        "documentId": "azbs50b7x8ipns9vy94mnchf",
+        "name": "WAXING",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:46.457Z",
+        "updatedAt": "2025-03-26T15:45:50.036Z",
+        "publishedAt": "2025-03-26T15:45:50.524Z"
+      }
+    },
+    {
+      "id": 74,
+      "documentId": "iit2ds9vzs1j2z7ueioilqpx",
+      "name": "Underarms",
+      "price": "0",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:59:15.750Z",
+      "updatedAt": "2025-03-26T15:59:15.750Z",
+      "publishedAt": "2025-03-26T15:59:16.161Z",
+      "category": {
+        "id": 18,
+        "documentId": "azbs50b7x8ipns9vy94mnchf",
+        "name": "WAXING",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:46.457Z",
+        "updatedAt": "2025-03-26T15:45:50.036Z",
+        "publishedAt": "2025-03-26T15:45:50.524Z"
+      }
+    },
+    {
+      "id": 76,
+      "documentId": "rn2z4a1psmk7tfe7x9tr0107",
+      "name": "Half-Arms",
+      "price": "0",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:59:28.156Z",
+      "updatedAt": "2025-03-26T15:59:28.156Z",
+      "publishedAt": "2025-03-26T15:59:28.691Z",
+      "category": {
+        "id": 18,
+        "documentId": "azbs50b7x8ipns9vy94mnchf",
+        "name": "WAXING",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:46.457Z",
+        "updatedAt": "2025-03-26T15:45:50.036Z",
+        "publishedAt": "2025-03-26T15:45:50.524Z"
+      }
+    },
+    {
+      "id": 78,
+      "documentId": "zkc2p5iryv4hxbvkfnpqqhox",
+      "name": "Full Arms",
+      "price": "0",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:59:38.973Z",
+      "updatedAt": "2025-03-26T15:59:38.973Z",
+      "publishedAt": "2025-03-26T15:59:39.508Z",
+      "category": {
+        "id": 18,
+        "documentId": "azbs50b7x8ipns9vy94mnchf",
+        "name": "WAXING",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:46.457Z",
+        "updatedAt": "2025-03-26T15:45:50.036Z",
+        "publishedAt": "2025-03-26T15:45:50.524Z"
+      }
+    },
+    {
+      "id": 80,
+      "documentId": "indtvh5gfglvpto272b31t4n",
+      "name": "Back",
+      "price": "0",
+      "description": "",
+      "order": 0,
+      "createdAt": "2025-03-26T15:59:49.336Z",
+      "updatedAt": "2025-03-26T15:59:49.336Z",
+      "publishedAt": "2025-03-26T15:59:49.825Z",
+      "category": {
+        "id": 18,
+        "documentId": "azbs50b7x8ipns9vy94mnchf",
+        "name": "WAXING",
+        "description": "",
+        "order": 0,
+        "createdAt": "2025-03-26T15:45:46.457Z",
+        "updatedAt": "2025-03-26T15:45:50.036Z",
+        "publishedAt": "2025-03-26T15:45:50.524Z"
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "pageSize": 100,
+      "pageCount": 1,
+      "total": 40
+    }
+  }
+}

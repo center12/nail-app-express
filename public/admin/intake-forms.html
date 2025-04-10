@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intake Forms - Admin Dashboard</title>
+    
+    <!-- Ant Design CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.24.8/antd.min.css">
+    
+    <!-- React and ReactDOM -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    
+    <!-- Ant Design -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/antd/4.24.8/antd.min.js"></script>
+    
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel" src="/admin/components/AdminMenu.js"></script>
+
+    <script type="text/babel">
+        const { Layout, Menu, Table, Typography, message, Modal, Button, Space } = antd;
+        const { Header, Content, Footer } = Layout;
+        const { Title } = Typography;
+
+        function IntakeFormsPage() {
+            const [intakeForms, setIntakeForms] = React.useState([]);
+            const [loading, setLoading] = React.useState(true);
+            const [selectedForm, setSelectedForm] = React.useState(null);
+            const [modalVisible, setModalVisible] = React.useState(false);
+
+            const formDetailsLayout = (form) => {
+                const sections = [
+                    {
+                        title: 'Personal Information',
+                        fields: [
+                            { label: 'Name', value: form.name },
+                            { label: 'Gender', value: form.gender },
+                            { label: 'Date of Birth', value: form.dob },
+                            { label: 'Email', value: form.email },
+                            { label: 'Phone', value: form.phone },
+                            { label: 'Address', value: form.address },
+                        ]
+                    },
+                    {
+                        title: 'Emergency Contact',
+                        fields: [
+                            { label: 'Contact Name', value: form.emergencyContact },
+                            { label: 'Contact Phone', value: form.emergencyContactPhone },
+                        ]
+                    },
+                    {
+                        title: 'Nail Care History',
+                        fields: [
+                            { label: 'Last Manicure', value: form.lastManicure },
+                            { label: 'Manicure Frequency', value: form.manicureFrequency },
+                            { label: 'Products Used', value: form.handFootNailProducts },
+                            { label: 'Nail Polish Duration', value: form.nailPolishLasts },
+                            { label: 'Desired Improvements', value: form.improveHandsFeetNails },
+                        ]
+                    },
+                    {
+                        title: 'Health & Conditions',
+                        fields: [
+                            { label: 'Nail Conditions', value: form.nailConditions },
+                            { label: 'Cuticle Condition', value: form.cuticles },
+                            { label: 'Hand Conditions', value: form.handConditions },
+                            { label: 'Bites Nails', value: form.biteNails },
+                            { label: 'Has Nail Infection', value: form.nailInfection },
+                            { label: 'Infection Details', value: form.nailInfectionInfo },
+                            { label: 'Health Conditions', value: form.healthConditions },
+                            { label: 'Health Details', value: form.healthConditionsInfo },
+                            { label: 'Pregnant', value: form.pregnant },
+                            { label: 'Allergies', value: form.allergies },
+                        ]
+                    },
+                    {
+                        title: 'Additional Information',
+                        fields: [
+                            { label: 'Hobbies & Activities', value: form.hobbiesActivities },
+                            { label: 'How did you hear about us?', value: form.howDidYouHearAboutUs },
+                        ]
+                    },
+                    {
+                        title: 'Signature',
+                        fields: [
+                            { label: 'Print Name', value: form.printName },
+                            { label: 'Date', value: form.date },
+                        ]
+                    }
+                ];
+
+                return (
+                    <div style={{ maxHeight: '60vh', overflow: 'auto' }}>
+                        {sections.map((section, idx) => (
+                            <div key={idx} style={{ marginBottom: '24px' }}>
+                                <Title level={4}>{section.title}</Title>
+                                {section.fields.map((field, fieldIdx) => (
+                                    <div key={fieldIdx} style={{ marginBottom: '8px' }}>
+                                        <strong>{field.label}:</strong> {field.value || 'N/A'}
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
+                    </div>
+                );
+            };
+
+            const columns = [
+                {
+                    title: 'Client Name',
+                    dataIndex: 'name',
+                    sorter: (a, b) => a.name.localeCompare(b.name)
+                },
+                {
+                    title: 'Created Date',
+                    dataIndex: 'createdAt',
+                    render: (text) => new Date(text).toLocaleDateString(),
+                    sorter: (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
+                },
+                {
+                    title: 'Email',
+                    dataIndex: 'email'
+                },
+                {
+                    title: 'Phone',
+                    dataIndex: 'phone'
+                },
+                {
+                    title: 'Actions',
+                    key: 'actions',
+                    render: (_, record) => (
+                        <Space>
+                            <Button type="primary" onClick={() => showFormDetails(record)}>View</Button>
+                            <Button danger onClick={() => handleDelete(record._id)}>Delete</Button>
+                        </Space>
+                    )
+                }
+            ];
+
+            React.useEffect(() => {
+                fetchIntakeForms();
+            }, []);
+
+            const fetchIntakeForms = async () => {
+                try {
+                    const response = await fetch('/api/intake-forms', {
+                        headers: {
+                            'Authorization': `Bearer ${localStorage.getItem('token')}`
+                        }
+                    });
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        setIntakeForms(data.data);
+                    } else {
+                        message.error('Failed to fetch intake forms');
+                    }
+                } catch (error) {
+                    message.error('Error fetching intake forms');
+                } finally {
+                    setLoading(false);
+                }
+            };
+
+            const showFormDetails = (form) => {
+                setSelectedForm(form);
+                setModalVisible(true);
+            };
+
+            const handleDelete = async (id) => {
+                try {
+                    const response = await fetch(`/api/intake-forms/${id}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Authorization': `Bearer ${localStorage.getItem('token')}`
+                        }
+                    });
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        message.success('Intake form deleted successfully');
+                        fetchIntakeForms();
+                    } else {
+                        message.error('Failed to delete intake form');
+                    }
+                } catch (error) {
+                    message.error('Error deleting intake form');
+                }
+            };
+
+            return (
+                <Layout className="layout" style={{ minHeight: '100vh' }}>
+                    <Header>
+                        <AdminMenu selectedKey="4" />
+                    </Header>
+                    
+                    <Content style={{ padding: '50px' }}>
+                        <Title level={2}>Intake Forms</Title>
+                        
+                        <Table 
+                            columns={columns}
+                            dataSource={intakeForms}
+                            loading={loading}
+                            rowKey="_id"
+                            pagination={{ pageSize: 10 }}
+                        />
+
+                        <Modal
+                            title="Intake Form Details"
+                            visible={modalVisible}
+                            onCancel={() => setModalVisible(false)}
+                            footer={[
+                                <Button key="close" onClick={() => setModalVisible(false)}>
+                                    Close
+                                </Button>
+                            ]}
+                            width={800}
+                        >
+                            {selectedForm && formDetailsLayout(selectedForm)}
+                        </Modal>
+                    </Content>
+                    
+                    <Footer style={{ textAlign: 'center' }}>
+                        Admin Dashboard ©{new Date().getFullYear()}
+                    </Footer>
+                </Layout>
+            );
+        }
+
+        ReactDOM.render(<IntakeFormsPage />, document.getElementById('root'));
+    </script>
+</body>
+</html> 

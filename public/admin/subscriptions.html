@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Management</title>
+    
+    <!-- Ant Design CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.24.8/antd.min.css">
+    
+    <!-- React and ReactDOM -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    
+    <!-- Ant Design -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/antd/4.24.8/antd.min.js"></script>
+    
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel" src="/admin/components/AdminMenu.js"></script>
+
+    <script type="text/babel">
+        const { Layout, Menu, Table, Tag, Space, Button, message, Modal, Select } = antd;
+        const { Header, Content, Footer } = Layout;
+        const { Option } = Select;
+
+        function SubscriptionsPage() {
+            const [subscriptions, setSubscriptions] = React.useState([]);
+            const [loading, setLoading] = React.useState(true);
+            const [selectedSubscription, setSelectedSubscription] = React.useState(null);
+            const [isModalVisible, setIsModalVisible] = React.useState(false);
+
+            const columns = [
+                {
+                    title: 'Name',
+                    dataIndex: 'name',
+                    key: 'name',
+                },
+                {
+                    title: 'Email',
+                    dataIndex: 'email',
+                    key: 'email',
+                },
+                {
+                    title: 'Phone',
+                    dataIndex: 'phone',
+                    key: 'phone',
+                },
+                {
+                    title: 'Status',
+                    dataIndex: 'status',
+                    key: 'status',
+                    render: status => (
+                        <Tag color={
+                            status === 'active' ? 'green' :
+                            status === 'pending' ? 'gold' : 'red'
+                        }>
+                            {status.toUpperCase()}
+                        </Tag>
+                    ),
+                },
+                {
+                    title: 'Action',
+                    key: 'action',
+                    render: (_, record) => (
+                        <Space size="middle">
+                            <Button type="link" onClick={() => showStatusModal(record)}>
+                                Update Status
+                            </Button>
+                            <Button type="link" danger onClick={() => handleDelete(record._id)}>
+                                Delete
+                            </Button>
+                        </Space>
+                    ),
+                },
+            ];
+
+            React.useEffect(() => {
+                fetchSubscriptions();
+            }, []);
+
+            const fetchSubscriptions = async () => {
+                try {
+                    const response = await fetch('/api/subscriptions', {
+                        headers: {
+                            'Authorization': `Bearer ${localStorage.getItem('token')}`
+                        }
+                    });
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        setSubscriptions(data.data);
+                    } else {
+                        message.error('Failed to fetch subscriptions');
+                    }
+                } catch (error) {
+                    message.error('Error fetching subscriptions');
+                } finally {
+                    setLoading(false);
+                }
+            };
+
+            const showStatusModal = (subscription) => {
+                setSelectedSubscription(subscription);
+                setIsModalVisible(true);
+            };
+
+            const handleStatusUpdate = async (newStatus) => {
+                try {
+                    const response = await fetch(`/api/subscriptions/${selectedSubscription._id}/status`, {
+                        method: 'PATCH',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${localStorage.getItem('token')}`
+                        },
+                        body: JSON.stringify({ status: newStatus })
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        message.success('Status updated successfully');
+                        fetchSubscriptions();
+                    } else {
+                        message.error('Failed to update status');
+                    }
+                } catch (error) {
+                    message.error('Error updating status');
+                }
+                setIsModalVisible(false);
+            };
+
+            const handleDelete = async (id) => {
+                if (confirm('Are you sure you want to delete this subscription?')) {
+                    try {
+                        const response = await fetch(`/api/subscriptions/${id}`, {
+                            method: 'DELETE',
+                            headers: {
+                                'Authorization': `Bearer ${localStorage.getItem('token')}`
+                            }
+                        });
+                        
+                        const data = await response.json();
+                        
+                        if (data.success) {
+                            message.success('Subscription deleted successfully');
+                            fetchSubscriptions();
+                        } else {
+                            message.error('Failed to delete subscription');
+                        }
+                    } catch (error) {
+                        message.error('Error deleting subscription');
+                    }
+                }
+            };
+
+            return (
+                <Layout className="layout" style={{ minHeight: '100vh' }}>
+                    <Header>
+                        <AdminMenu selectedKey="6" />
+                    </Header>
+                    
+                    <Content style={{ padding: '50px' }}>
+                        <h1>Subscription Management</h1>
+                        <Table 
+                            columns={columns} 
+                            dataSource={subscriptions}
+                            loading={loading}
+                            rowKey="_id"
+                        />
+
+                        <Modal
+                            title="Update Subscription Status"
+                            visible={isModalVisible}
+                            onCancel={() => setIsModalVisible(false)}
+                            footer={null}
+                        >
+                            <Select
+                                style={{ width: '100%' }}
+                                placeholder="Select new status"
+                                onChange={handleStatusUpdate}
+                            >
+                                <Option value="active">Active</Option>
+                                <Option value="inactive">Inactive</Option>
+                                <Option value="pending">Pending</Option>
+                            </Select>
+                        </Modal>
+                    </Content>
+                    
+                    <Footer style={{ textAlign: 'center' }}>
+                        Admin Dashboard ©{new Date().getFullYear()}
+                    </Footer>
+                </Layout>
+            );
+        }
+
+        ReactDOM.render(<SubscriptionsPage />, document.getElementById('root'));
+    </script>
+</body>
+</html> 

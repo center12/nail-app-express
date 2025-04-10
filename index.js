@@ -39,6 +39,9 @@ app.use('/api/auth', authRoutes);
 app.use('/api/users', require('./routes/users'));
 app.use('/api/intake-forms', intakeFormRoutes);
 app.use('/api/subscriptions', subscriptionRoutes);
+app.use('/api/services', require('./routes/services'));
+app.use('/api/categories', require('./routes/categories'));
+app.use('/api/drinks', require('./routes/drinks'));
 
 // Admin routes
 app.get('/admin', (req, res) => {
@@ -47,6 +50,18 @@ app.get('/admin', (req, res) => {
 
 app.get('/admin/login', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'admin', 'login.html'));
+});
+
+app.get('/users', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'user', 'index.html'));
+});
+
+app.get('/intake-forms', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'intake-form', 'index.html'));
+});
+
+app.get('/subscriptions', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'subscription', 'index.html'));
 });
 
 // API welcome route

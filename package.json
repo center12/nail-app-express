@@ -7,6 +7,8 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "create-default-user": "node scripts/createDefaultUser.js",
+    "migrate-drinks": "node scripts/migrate-drinks-defaults.js",
+    "migrate-services": "node scripts/migrate-services-defaults.js",
     "build:css": "tailwindcss -i ./public/admin/styles.css -o ./public/admin/styles.min.css --minify",
     "watch:css": "tailwindcss -i ./public/admin/styles.css -o ./public/admin/styles.min.css --watch"
   },
