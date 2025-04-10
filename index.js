@@ -50,10 +50,6 @@ app.get('/', (req, res) => {
 
 // Admin routes
 app.get('/admin', (req, res) => {
-  // Redirect to login if not authenticated
-  if (!req.isAuthenticated()) {
-    return res.redirect('/admin/login');
-  }
   res.sendFile(path.join(__dirname, 'public', 'admin', 'index.html'));
 });
 

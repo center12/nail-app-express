@@ -24,11 +24,28 @@
     <script type="text/babel" src="/admin/components/AdminMenu.js"></script>
 
     <script type="text/babel">
-        const { Layout, Menu, Typography, Card, Row, Col } = antd;
+        const { Layout, Menu, Typography, Card, Row, Col, message } = antd;
         const { Header, Content, Footer } = Layout;
         const { Title } = Typography;
 
         function Dashboard() {
+            React.useEffect(() => {
+                // Check authentication status
+                checkAuth();
+            }, []);
+
+            const checkAuth = async () => {
+                try {
+                    const response = await fetch('/api/admin/check-auth');
+                    if (!response.ok) {
+                        window.location.href = '/admin/login.html';
+                    }
+                } catch (error) {
+                    message.error('Authentication check failed');
+                    window.location.href = '/admin/login.html';
+                }
+            };
+
             return (
                 <Layout className="layout" style={{ minHeight: '100vh' }}>
                     <Header>
