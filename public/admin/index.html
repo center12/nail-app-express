@@ -36,7 +36,11 @@
 
             const checkAuth = async () => {
                 try {
-                    const response = await fetch('/api/admin/check-auth');
+                    const response = await fetch('/api/auth/me', {
+                        headers: {
+                            'Authorization': `Bearer ${localStorage.getItem('token')}`
+                        }
+                    });
                     if (!response.ok) {
                         window.location.href = '/admin/login.html';
                     }
