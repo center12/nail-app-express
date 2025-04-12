@@ -10,6 +10,10 @@ const authorize = (roles = []) => {
   return [
     authenticate,
     (req, res, next) => {
+      if (!req.isAuthenticated()) {
+        return res.redirect('/admin/login.html');
+      }
+
       if (!roles.length) {
         return next();
       }
