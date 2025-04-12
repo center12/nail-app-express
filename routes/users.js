@@ -44,7 +44,7 @@ router.put('/:id', async (req, res) => {
 
         user.email = email || user.email;
         user.name = name || user.name;
-        if (role) await user.updateRole(role);
+        user.role = role || user.role;
 
         await user.save();
         res.json(user);
