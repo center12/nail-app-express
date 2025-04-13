@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waxing Services Management - Admin Dashboard</title>
+    
+    <!-- Ant Design CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.24.8/antd.min.css">
+    
+    <!-- React and ReactDOM -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    
+    <!-- Ant Design -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/antd/4.24.8/antd.min.js"></script>
+    
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel" src="/admin/components/AdminMenu.js"></script>
+
+    <script type="text/babel">
+        const { Layout, Table, Typography, message, Modal, Button, Form, Input, InputNumber, Select, Space } = antd;
+        const { Header, Content, Footer } = Layout;
+        const { Title } = Typography;
+
+        function WaxingPage() {
+            const [waxingServices, setWaxingServices] = React.useState([]);
+            const [categories, setCategories] = React.useState([]);
+            const [loading, setLoading] = React.useState(true);
+            const [modalVisible, setModalVisible] = React.useState(false);
+            const [editingService, setEditingService] = React.useState(null);
+            const [form] = Form.useForm();
+
+            const columns = [
+                {
+                    title: 'Name',
+                    dataIndex: 'name',
+                    sorter: (a, b) => a.name.localeCompare(b.name)
+                },
+                {
+                    title: 'Price',
+                    dataIndex: 'price',
+                    render: (price) => `${price}`
+                },
+                {
+                    title: 'Category',
+                    dataIndex: ['category', 'name']
+                },
+                {
+                    title: 'Order',
+                    dataIndex: 'order'
+                },
+                {
+                    title: 'Actions',
+                    key: 'actions',
+                    render: (_, record) => (
+                        <Space>
+                            <Button type="primary" onClick={() => handleEdit(record)}>Edit</Button>
+                            <Button danger onClick={() => handleDelete(record._id)}>Delete</Button>
+                        </Space>
+                    )
+                }
+            ];
+
+            React.useEffect(() => {
+                fetchWaxingServices();
+                fetchCategories();
+            }, []);
+
+            const fetchWaxingServices = async () => {
+                try {
+                    const response = await fetch('/api/waxing', {
+                        headers: {
+                            'Authorization': `Bearer ${localStorage.getItem('token')}`
+                        }
+                    });
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        setWaxingServices(data.data);
+                    } else {
+                        message.error('Failed to fetch waxing services');
+                    }
+                } catch (error) {
+                    message.error('Error fetching waxing services');
+                } finally {
+                    setLoading(false);
+                }
+            };
+
+            const fetchCategories = async () => {
+                try {
+                    const response = await fetch('/api/categories', {
+                        headers: {
+                            'Authorization': `Bearer ${localStorage.getItem('token')}`
+                        }
+                    });
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        setCategories(data.data);
+                    }
+                } catch (error) {
+                    message.error('Error fetching categories');
+                }
+            };
+
+            const handleEdit = (service) => {
+                setEditingService(service);
+                form.setFieldsValue({
+                    name: service.name,
+                    price: service.price,
+                    description: service.description,
+                    category: service.category._id,
+                    order: service.order
+                });
+                setModalVisible(true);
+            };
+
+            const handleAdd = () => {
+                setEditingService(null);
+                form.resetFields();
+                setModalVisible(true);
+            };
+
+            const handleDelete = async (id) => {
+                try {
+                    const response = await fetch(`/api/waxing/${id}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Authorization': `Bearer ${localStorage.getItem('token')}`
+                        }
+                    });
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        message.success('Waxing service deleted successfully');
+                        fetchWaxingServices();
+                    } else {
+                        message.error('Failed to delete waxing service');
+                    }
+                } catch (error) {
+                    message.error('Error deleting waxing service');
+                }
+            };
+
+            const handleSubmit = async (values) => {
+                try {
+                    const url = editingService 
+                        ? `/api/waxing/${editingService._id}`
+                        : '/api/waxing';
+                    
+                    const method = editingService ? 'PUT' : 'POST';
+                    
+                    const response = await fetch(url, {
+                        method,
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${localStorage.getItem('token')}`
+                        },
+                        body: JSON.stringify(values)
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        message.success(`Waxing service ${editingService ? 'updated' : 'created'} successfully`);
+                        setModalVisible(false);
+                        fetchWaxingServices();
+                    } else {
+                        message.error(`Failed to ${editingService ? 'update' : 'create'} waxing service`);
+                    }
+                } catch (error) {
+                    message.error(`Error ${editingService ? 'updating' : 'creating'} waxing service`);
+                }
+            };
+
+            return (
+                <Layout className="layout" style={{ minHeight: '100vh' }}>
+                    <Header>
+                        <AdminMenu selectedKey="8" />
+                    </Header>
+                    
+                    <Content style={{ padding: '50px' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+                            <Title level={2}>Waxing Services Management</Title>
+                            <Button type="primary" onClick={handleAdd}>Add New Waxing Service</Button>
+                        </div>
+                        
+                        <Table 
+                            columns={columns}
+                            dataSource={waxingServices}
+                            loading={loading}
+                            rowKey="_id"
+                            pagination={{ pageSize: 10 }}
+                        />
+
+                        <Modal
+                            title={editingService ? "Edit Waxing Service" : "Add New Waxing Service"}
+                            visible={modalVisible}
+                            onCancel={() => setModalVisible(false)}
+                            footer={null}
+                        >
+                            <Form
+                                form={form}
+                                layout="vertical"
+                                onFinish={handleSubmit}
+                            >
+                                <Form.Item
+                                    name="name"
+                                    label="Name"
+                                    rules={[{ required: true, message: 'Please input service name!' }]}
+                                >
+                                    <Input />
+                                </Form.Item>
+
+                                <Form.Item
+                                    name="price"
+                                    label="Price"
+                                    rules={[{ required: true, message: 'Please input price!' }]}
+                                >
+                                    <Input />
+                                </Form.Item>
+
+                                <Form.Item
+                                    name="description"
+                                    label="Description"
+                                >
+                                    <Input.TextArea />
+                                </Form.Item>
+
+                                <Form.Item
+                                    name="category"
+                                    label="Category"
+                                    rules={[{ required: true, message: 'Please select category!' }]}
+                                >
+                                    <Select>
+                                        {categories.map(category => (
+                                            <Select.Option key={category._id} value={category._id}>
+                                                {category.name}
+                                            </Select.Option>
+                                        ))}
+                                    </Select>
+                                </Form.Item>
+
+                                <Form.Item
+                                    name="order"
+                                    label="Display Order"
+                                    rules={[{ required: true, message: 'Please input display order!' }]}
+                                >
+                                    <InputNumber min={0} style={{ width: '100%' }} />
+                                </Form.Item>
+
+                                <Form.Item>
+                                    <Space>
+                                        <Button type="primary" htmlType="submit">
+                                            {editingService ? 'Update' : 'Create'}
+                                        </Button>
+                                        <Button onClick={() => setModalVisible(false)}>
+                                            Cancel
+                                        </Button>
+                                    </Space>
+                                </Form.Item>
+                            </Form>
+                        </Modal>
+                    </Content>
+                    
+                    <Footer style={{ textAlign: 'center' }}>
+                        Admin Dashboard ©{new Date().getFullYear()}
+                    </Footer>
+                </Layout>
+            );
+        }
+
+        ReactDOM.render(<WaxingPage />, document.getElementById('root'));
+    </script>
+</body>
+</html> 

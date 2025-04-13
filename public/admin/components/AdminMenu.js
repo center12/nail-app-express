@@ -11,6 +11,7 @@
                 <Menu.Item key="5"><a href="/admin/services.html">Services</a></Menu.Item>
                 <Menu.Item key="6"><a href="/admin/subscriptions.html">Subscriptions</a></Menu.Item>
                 <Menu.Item key="7"><a href="/admin/users.html">Users</a></Menu.Item>
+                <Menu.Item key="8"><a href="/admin/waxing.html">Waxing</a></Menu.Item>
             </Menu>
         );
     };

@@ -42,6 +42,7 @@ app.use('/api/subscriptions', subscriptionRoutes);
 app.use('/api/services', require('./routes/services'));
 app.use('/api/categories', require('./routes/categories'));
 app.use('/api/drinks', require('./routes/drinks'));
+app.use('/api/waxing', require('./routes/waxing'));
 
 // Root route redirect to admin
 app.get('/', (req, res) => {
